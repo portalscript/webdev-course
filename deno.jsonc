@@ -1,0 +1,5 @@
+{
+	"tasks": {
+		"simple-webserver": "deno run --allow-net part1/1.simple-webserver/deno/webserver.ts",
+	}
+}
