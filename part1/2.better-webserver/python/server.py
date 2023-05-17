@@ -46,4 +46,4 @@ while True:
         )
 
     text = response.package()
-    conn.sendall(text.encode(encoding="latin-1"))
+    conn.sendall(text.encode())

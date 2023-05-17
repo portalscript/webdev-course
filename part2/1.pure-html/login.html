@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LOGIN HERE</title>
+	</head>
+	<body>
+		<nav>
+			<h1>
+				I am a webpage.
+			</h1>
+			<h2>
+				Login
+			</h2>
+			<a href="/">Home</a>
+			<a href="/data.html">Data</a>
+			<a href="/photos.html">Photos</a>
+		</nav>
+		<main>
+			<form>
+				<div>
+					<label for="username">Username</label>
+					<input name="username" id="username" required minlength="6" />
+				</div>
+				<div>
+					<label for="pw">Password</label>
+					<input name="pass" id="pw" type="password" required minlength="8" />
+				</div>
+				<div>
+					<label for="file-input">Secret Passcode File</label>
+					<input name="file-input" id="file-input" type="file" />
+				</div>
+				<div>
+					<label for="fav-food">Favorite Food</label>
+					<select name="favorite-food" id="fav-food" type="password" required>
+						<option></option>
+						<option>Pizza</option>
+						<option>Lasagna</option>
+						<option>Sandwitch</option>
+						<optgroup label="Deserts">
+							<option>Cake</option>
+							<option>Ice Cream</option>
+						</optgroup>
+						<optgroup label="Deserts">
+							<option>Cake</option>
+							<option>Ice Cream</option>
+						</optgroup>
+					</select>
+				</div>
+				<div>
+					<button type="submit">Login</button>
+				</div>
+			</form>
+		</main>
+	</body>
+</html>
