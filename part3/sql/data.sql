@@ -18,7 +18,6 @@ VALUES
 	(1, "Flour", 1, "cup"),
 	(1, "Butter", 1, "cup"),
 	(1, "Sugar", 2, "cups"),
-	(1, "Eggs", 4, ""),
 	(1, "Large Eggs", 4, ""),
 	(1, "Vanilla Extract", 1, "teaspoon"),
 	(1, "Salt", 0.25, "teaspoon"),
