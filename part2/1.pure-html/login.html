@@ -17,8 +17,8 @@
 		</nav>
 		<main>
 			<form>
-				<div>
-					<label for="username">Username</label>
+				<div class="container form-container">
+					<label style="color:aqua;" for="username">Username</label>
 					<input name="username" id="username" required minlength="6" />
 				</div>
 				<div>
@@ -33,19 +33,39 @@
 					<label for="fav-food">Favorite Food</label>
 					<select name="favorite-food" id="fav-food" type="password" required>
 						<option></option>
-						<option>Pizza</option>
+						<option value="pizza">Pizza</option>
 						<option>Lasagna</option>
 						<option>Sandwitch</option>
 						<optgroup label="Deserts">
 							<option>Cake</option>
 							<option>Ice Cream</option>
 						</optgroup>
-						<optgroup label="Deserts">
-							<option>Cake</option>
-							<option>Ice Cream</option>
+						<optgroup label="Deserts 2">
+							<option>Cake 2</option>
+							<option>Ice Cream 2</option>
 						</optgroup>
 					</select>
 				</div>
+				<textarea></textarea>
+				<fieldset>
+					<legend>Select a maintenance drone:</legend>
+
+					<div>
+						<input type="radio" id="huey" name="drone" value="huey"
+							checked>
+						<label for="huey">Huey</label>
+					</div>
+
+					<div>
+						<input type="radio" id="dewey" name="drone" value="dewey">
+						<label for="dewey">Dewey</label>
+					</div>
+
+					<div>
+						<input type="radio" id="louie" name="drone" value="louie">
+						<label for="louie">Louie</label>
+					</div>
+				</fieldset>
 				<div>
 					<button type="submit">Login</button>
 				</div>

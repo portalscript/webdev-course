@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  webserver:
+    build:
+      dockerfile: ./webserver.dockerfile
+    restart: "always"
+    ports:
+      - "8880:80"
+    links:
+      - database
+    volumes:
+      - ./www:/var/www/html:rw
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html
+      MYSQL_ROOT_PASSWORD: root-password
+      MYSQL_USER: recipe-app-user
+      MYSQL_PASSWORD: super-secret-password
+      MYSQL_DATABASE: recipes
+      HOST_MACHINE_MYSQL_PORT: 3306
+  database:
+    image: mysql:8.0.33
+    restart: "always"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./.db/initdb:/docker-entrypoint-initdb.d
+      - ./.db/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root-password
+      MYSQL_DATABASE: recipes
+      MYSQL_USER: recipe-app-user
+      MYSQL_PASSWORD: super-secret-password
+  phpmyadmin:
+    image: phpmyadmin
+    links:
+      - database
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: root-password
+      MYSQL_ROOT_PASSWORD: root-password
+      MYSQL_USER: recipe-app-user
+      MYSQL_PASSWORD: super-secret-password
+    ports:
+      - "8889:80"
