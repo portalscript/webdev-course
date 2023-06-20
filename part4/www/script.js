@@ -1,13 +1,16 @@
 // deno-lint-ignore-file
 
-console.log('THIS IS JAVASCRIPT CODE!');
-function doTheThing(event) {
-	console.log(event);
-	console.log('DOING THE THING!');
-	// TODO: update the counter!
+console.log('THIS IS JAVASCRIPT CODE!!!!!!');
+
+const buttonHolder = document.getElementById('button-holder');
+const buttons = buttonHolder.querySelectorAll('button');
+
+for (let i = 0; i < buttons.length; i++) {
+	const button = buttons[i];
+	let counter = 0;
+	button.addEventListener('click', function doTheThing(event) {
+		let b = document.createElement('button');
+		b.innerText = "I'm NEW HERE";
+		event.target.parentElement.appendChild(b);
+	});
 }
-
-// TODO: add event listener here rather than in the HTML
-
-// TODO: add multiple buttons and listen for clicks on all of them
-
