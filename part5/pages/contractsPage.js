@@ -27,6 +27,7 @@ export async function renderContractPage(container) {
 					createElement('div', { class: 'card-footer' }, [
 						createElement('button', { class: 'btn btn-primary', disabled: contract.accepted, onclick: async function() {
 							const response = await makeRequest(`my/contracts/${contract.id}/accept`, null, 'POST');
+							console.log(response);
 							renderContractPage(container);
 
 						} }, 'Accept')
@@ -38,8 +39,4 @@ export async function renderContractPage(container) {
 		cardsContainer.appendChild(card);
 	}
 	container.appendChild(cardsContainer);
-
-}
-
-function acceptContract(contract, container) {
 }

@@ -4,3 +4,4 @@
 **/.db
 future/
 .vscode
+dist/
