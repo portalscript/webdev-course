@@ -5,7 +5,12 @@ import { LoginPage } from './pages/Login.jsx';
 const router = createHashRouter([
 	{
 		path: "/",
-		element: <div><Link to='login'>Login</Link></div>,
+		element: (
+			<div className="container center">
+				<h3>Welcome to SpaceTraders</h3>
+				<Link to='login'>Login</Link>
+			</div>
+		),
 	},
 	{
 		path: "/login",

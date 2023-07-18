@@ -3,6 +3,20 @@ import { Form, Button } from 'react-bootstrap';
 import { makeRequest } from '../utils/makeRequest';
 import { useNavigate } from 'react-router-dom';
 
+const FACTIONS = [
+	{ value: "COSMIC", name: "Cosmic Engineers" },
+	{ value: "VOID", name: "Voidfarers" },
+	{ value: "GALACTIC", name: "Galactic Alliance" },
+	{ value: "QUANTUM", name: "Quantum Federation" },
+	{ value: "DOMINION", name: "Stellar Dominion" },
+	{ value: "ASTRO", name: "Astro-Salvage Alliance" },
+	{ value: "CORSAIRS", name: "Seventh Space Corsairs" },
+	{ value: "OBSIDIAN", name: "Obsidian Syndicate" },
+	{ value: "AEGIS", name: "Aegis Collective" },
+	{ value: "UNITED", name: "United Independent Settlements" },
+	{ value: "NEWFACTION", name: "BEST FACTION EVER" },
+];
+
 export function LoginPage() {
 	const [callsign, setCallsign] = React.useState('');
 	const [faction, setFaction] = React.useState('');
@@ -36,17 +50,10 @@ export function LoginPage() {
 						onChange={(e) => setFaction(e.target.value)}
 						required
 					>
-						<option selected value="">Choose a faction</option>
-						<option value="COSMIC">Cosmic Engineers</option>
-						<option value="VOID">Voidfarers</option>
-						<option value="GALACTIC">Galactic Alliance</option>
-						<option value="QUANTUM">Quantum Federation</option>
-						<option value="DOMINION">Stellar Dominion</option>
-						<option value="ASTRO">Astro-Salvage Alliance</option>
-						<option value="CORSAIRS">Seventh Space Corsairs</option>
-						<option value="OBSIDIAN">Obsidian Syndicate</option>
-						<option value="AEGIS">Aegis Collective</option>
-						<option value="UNITED">United Independent Settlements</option>
+						<option value="">Choose a faction</option>
+						{FACTIONS.map((faction) => (
+							<option key={faction.value} value={faction.value}>{faction.name}</option>
+						))}
 					</Form.Select>
 				</div>
 			</div>
