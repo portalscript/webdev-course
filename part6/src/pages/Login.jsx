@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { makeRequest } from '../utils/makeRequest';
 import { useNavigate } from 'react-router-dom';
@@ -22,6 +22,12 @@ export function LoginPage() {
 	const [faction, setFaction] = React.useState('');
 	const navigate = useNavigate();
 
+	useEffect(() => {
+		if (window.token) {
+			navigate('/contracts')
+		}
+	}, []);
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
@@ -30,7 +36,7 @@ export function LoginPage() {
 			window.token = response.data.token;
 			localStorage.setItem('token', token);
 			alert(`This is your token:\n\n${token}\n\nSave it in a safe place.`);
-			navigate('/')
+			navigate('/contracts')
 		}
 	}
 	return (

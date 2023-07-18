@@ -1,6 +1,7 @@
 import React from 'react';
 import { createHashRouter, RouterProvider, Link } from "react-router-dom";
 import { LoginPage } from './pages/Login.jsx';
+import ContractsPage from './pages/Contracts.jsx';
 
 const router = createHashRouter([
 	{
@@ -15,6 +16,10 @@ const router = createHashRouter([
 	{
 		path: "/login",
 		element: <LoginPage />,
+	},
+	{
+		path: "/contracts",
+		element: <ContractsPage />,
 	},
 ]);
 
